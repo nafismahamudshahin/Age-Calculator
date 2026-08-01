@@ -29,13 +29,6 @@ body {
     color: #333;
 }
 
-.input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 20px;
-}
-
 label {
     font-size: 15px;
     font-weight: 600;
@@ -55,7 +48,7 @@ label {
     box-shadow: 0 0 10px rgba(108, 99, 255, 0.3);
 }
 
-button {
+#calculateBtn {
     width: 100%;
     padding: 13px;
     margin-top: 20px;
