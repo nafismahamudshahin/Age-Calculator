@@ -13,12 +13,18 @@ const calculateBtn = document.getElementById("calculateBtn");
 
 calculateBtn.addEventListener('click', () => {
     if (!date.value) {
-        result.innerText = "Please select your Birth.";
+        result.innerText = "Please Enter your Birth.";
         result.classList.add('result');
         return;
     }
     const birthDate = new Date(date.value);
     const today = new Date();
+
+    if (birthDate > today) {
+        result.innerText = "Please Enter a valid birth date.";
+        result.classList.add('result');
+        return;
+    }
 
     let years = today.getFullYear() - birthDate.getFullYear()
     let month = today.getMonth() - birthDate.getMonth();
@@ -33,6 +39,7 @@ calculateBtn.addEventListener('click', () => {
         years--;
         month += 12;
     }
+
     if (years < 0) years = 0;
     result.innerText = `Your Age: ${years} years ${month} months ${days} days.`;
     result.classList.add('result');
